@@ -1,6 +1,5 @@
 require "senro/version"
+require 'senro/query_params_formatter'
 
 module Senro
-  class Error < StandardError; end
-  # Your code goes here...
 end

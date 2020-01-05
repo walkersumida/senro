@@ -27,5 +27,13 @@ RSpec.describe Senro::QueryParamsFormatter do
         ).to eq('id ASC, name ASC, created_at ASC, updated_at DESC')
       end
     end
+
+    context 'with camel case attributes' do
+      it 'returns snake case attributes' do
+        expect(
+          Senro::QueryParamsFormatter.sorting('+id,+name,createdAt,-updatedAt')
+        ).to eq('id ASC, name ASC, created_at ASC, updated_at DESC')
+      end
+    end
   end
 end

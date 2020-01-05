@@ -36,6 +36,7 @@ puts order_clause
 
 ## Development
 
+- Run `docker-compose up --build` to set up.
 - Run `docker-compose run ruby bundle exec rake spec` to run the tests.
 - You can also run `docker-compose run ruby bin/console` for an interactive prompt that will allow you to experiment.
 

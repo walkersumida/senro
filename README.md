@@ -1,4 +1,8 @@
 # Senro
+
+[![Build Status](https://travis-ci.org/walkersumida/senro.svg?branch=master)](https://travis-ci.org/walkersumida/senro)
+[![Gem Version](https://badge.fury.io/rb/senro.svg)](https://badge.fury.io/rb/senro)
+
 ## Installation
 
 Add this line to your application's Gemfile:

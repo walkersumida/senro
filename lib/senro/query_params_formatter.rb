@@ -11,7 +11,7 @@ module Senro
     #
     # @param param [String] format string. e.g. `+id,-name`
     # @return [String] formated stirng
-    def self.sorting(param)
+    def self.sort(param)
       attributes = param.split(',')
       attributes.map do |attr|
         if /^\-/.match(attr).nil?

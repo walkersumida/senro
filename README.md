@@ -20,13 +20,13 @@ Or install it yourself as:
     $ gem install senro
 
 ## Usage
-### QueryParamsFormatter#sorting
+### QueryParamsFormatter#sort
 
 ```ruby
 puts params[:sort]
 # => '+id,-name'
 
-order_clause = Senro::QueryParamsFormatter.sorting(params[:sort])
+order_clause = Senro::QueryParamsFormatter.sort(params[:sort])
 
 puts order_clause
 # => 'id ASC, name DESC'

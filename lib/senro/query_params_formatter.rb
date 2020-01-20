@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Senro
-  class QueryParamsFormatter
+  module QueryParamsFormatter
     # Format RESTful API's query params to SQL order clause.
     # +: asc
     # -: desc

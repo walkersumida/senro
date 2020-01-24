@@ -13,3 +13,5 @@
 /vendor/
 Gemfile.lock
 /spec/senro/dummy/tmp/
+/spec/senro/dummy/log/
+spec/senro/dummy/db/test.sqlite3

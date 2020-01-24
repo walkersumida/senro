@@ -12,3 +12,4 @@
 
 /vendor/
 Gemfile.lock
+/spec/senro/dummy/tmp/

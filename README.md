@@ -20,7 +20,8 @@ Or install it yourself as:
     $ gem install senro
 
 ## Usage
-### QueryParamsFormatter#sort
+### in plain Ruby
+#### QueryParamsFormatter#sort
 
 ```ruby
 puts params[:sort]
@@ -32,6 +33,20 @@ puts order_clause
 # => 'id ASC, name DESC'
 
 @items = Item.all.order(order_clause)
+```
+
+### in Rails
+
+```ruby
+class ApplicationController < ActionController::Base # or ::API class
+  include Senro::Controller
+  before_action :query_params_formatter_sort
+end
+
+pp params['sort']
+# => 'id ASC, name DESC'
+pp params['original_sort']
+# => 'id,-name'
 ```
 
 ## Development

@@ -25,8 +25,12 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec-rails", '~> 3.9'
+  spec.add_development_dependency "rails", ">= 5"
+  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency 'pry'
 
   spec.required_ruby_version = '>= 2.5'
   spec.add_runtime_dependency('activesupport', '>= 5')
+  spec.add_runtime_dependency('actionpack', '>= 5')
 end

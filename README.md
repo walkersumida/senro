@@ -19,8 +19,9 @@ Or install it yourself as:
 
     $ gem install senro
 
-## Usage in plain Ruby
-### QueryParamsFormatter#sort
+## Usage
+### in plain Ruby
+#### QueryParamsFormatter#sort
 
 ```ruby
 puts params[:sort]
@@ -34,7 +35,7 @@ puts order_clause
 @items = Item.all.order(order_clause)
 ```
 
-## Usage in Rails
+### in Rails
 
 ```ruby
 class ApplicationController < ActionController::Base # or ::API class

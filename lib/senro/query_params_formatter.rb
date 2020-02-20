@@ -13,13 +13,14 @@ module Senro
     # @return [String] formated stirng
     def self.sort(param)
       attributes = param.split(',')
-      attributes.map do |attr|
+      attributes.map! do |attr|
         if /^\-/.match(attr).nil?
           "#{attr.strip.gsub(/^\+/, '').underscore} ASC"
         else
           "#{attr.strip.gsub(/^\-/, '').underscore} DESC"
         end
-      end.join(', ')
+      end
+      attributes.join(', ')
     end
   end
 end

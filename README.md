@@ -20,33 +20,31 @@ Or install it yourself as:
     $ gem install senro
 
 ## Usage
-### in plain Ruby
-#### QueryParamsFormatter#sort
-
-```ruby
-puts params[:sort]
-# => '+id,-name'
-
-order_clause = Senro::QueryParamsFormatter.sort(params[:sort])
-
-puts order_clause
-# => 'id ASC, name DESC'
-
-@items = Item.all.order(order_clause)
-```
-
 ### in Rails
 
 ```ruby
 class ApplicationController < ActionController::Base # or ::API class
   include Senro::Controller
   before_action :query_params_formatter_sort
+  before_action :query_params_formatter_query
 end
 
 pp params['sort']
 # => 'id ASC, name DESC'
 pp params['original_sort']
 # => 'id,-name'
+
+# e.g.
+@items = Item.all.order(params['sort'])
+
+
+pp params['q']
+# => { 'query' => 'senro gem', 'status' => { 'is' => ['open', 'close'] } }
+pp params['original_q']
+# => 'is:open is:close senro gem'
+
+# e.g.
+@items = Item.where(title: params['q']['query'], status: params['q']['status']['is'])
 ```
 
 ## Development

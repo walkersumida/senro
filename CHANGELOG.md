@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.5.0] - 2020-04-16
+### Changed
+- [#7](https://github.com/walkersumida/senro/pull/7) Change return values from string to hash
+
 ## [0.4] - 2020-02-22
 ### Added
 - [#6](https://github.com/walkersumida/senro/pull/6) Add `query_params_formatter_query` method

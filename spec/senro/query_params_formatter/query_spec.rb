@@ -21,6 +21,15 @@ RSpec.describe Senro::QueryParamsFormatter do
         end
       end
 
+      context 'with datetime status' do
+        it 'returns a datetime status' do
+          expect(Senro::QueryParamsFormatter.query('from:2020-01-01T10:00:00+09:00')).to eq({
+            query: '',
+            status: { from: ['2020-01-01T10:00:00+09:00'] }
+          })
+        end
+      end
+
       context 'with multiple statuses' do
         it 'returns statuses' do
           expect(Senro::QueryParamsFormatter.query('is:open is:close')).to eq({

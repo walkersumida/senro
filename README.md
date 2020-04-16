@@ -21,21 +21,34 @@ Or install it yourself as:
 
 ## Usage
 ### in Rails
+#### format sort
 
 ```ruby
 class ApplicationController < ActionController::Base # or ::API class
   include Senro::Controller
   before_action :query_params_formatter_sort
-  before_action :query_params_formatter_query
 end
 
+
 pp params['sort']
-# => 'id ASC, name DESC'
+# => { id: 'asc', name: 'desc' }
 pp params['original_sort']
 # => 'id,-name'
 
-# e.g.
+# e.g. in ActiveRecord
 @items = Item.all.order(params['sort'])
+
+# e.g. in Mongoid
+@items = Item.all.order_by(params['sort'])
+```
+
+#### format query
+
+```ruby
+class ApplicationController < ActionController::Base # or ::API class
+  include Senro::Controller
+  before_action :query_params_formatter_query
+end
 
 
 pp params['q']

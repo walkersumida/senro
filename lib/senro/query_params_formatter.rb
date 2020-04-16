@@ -13,14 +13,13 @@ module Senro
     # @return [String] formated stirng
     def self.sort(param)
       attributes = param.split(',')
-      attributes.map! do |attr|
+      attributes.each_with_object({}) do |attr, hash|
         if /^\-/.match(attr).nil?
-          "#{attr.strip.gsub(/^\+/, '').underscore} ASC"
+          hash[attr.strip.gsub(/^\+/, '').underscore.to_sym] = 'asc'
         else
-          "#{attr.strip.gsub(/^\-/, '').underscore} DESC"
+          hash[attr.strip.gsub(/^\-/, '').underscore.to_sym] = 'desc'
         end
       end
-      attributes.join(', ')
     end
 
     # Format RESTful API's query params to SQL where clause.

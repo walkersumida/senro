@@ -5,7 +5,8 @@ RSpec.describe 'Items', type: :request do
     it 'returns a formatted sort param' do
       get items_path, params: { sort: 'id' }
 
-      expect(response.request.env['action_controller.instance'].params['sort']).to eq('id ASC')
+      expect(response.request.env['action_controller.instance'].params['sort']).
+        to eq(ActionController::Parameters.new(id: 'asc'))
       expect(response.request.env['action_controller.instance'].params['original_sort']).to eq('id')
     end
   end
@@ -14,7 +15,8 @@ RSpec.describe 'Items', type: :request do
     it 'returns a formatted sort param' do
       get items_path, params: { sort: 'id,-name' }
 
-      expect(response.request.env['action_controller.instance'].params['sort']).to eq('id ASC, name DESC')
+      expect(response.request.env['action_controller.instance'].params['sort']).
+        to eq(ActionController::Parameters.new({ id: 'asc', name: 'desc' }))
       expect(response.request.env['action_controller.instance'].params['original_sort']).to eq('id,-name')
     end
   end
@@ -24,7 +26,7 @@ RSpec.describe 'Items', type: :request do
       get items_path, params: { q: 'is:open senro gem' }
 
       instance = response.request.env['action_controller.instance']
-      expect(instance.params['q'].to_unsafe_hash).
+      expect(instance.params['q']).
         to eq({ 'query' => 'senro gem', 'status' => { 'is' => ['open'] } })
       expect(instance.params['original_q']).to eq('is:open senro gem')
     end

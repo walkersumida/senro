@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.5.1] - 2020-04-16
+### Fixed
+- [#8](https://github.com/walkersumida/senro/pull/8) Fix a datetime status bug
+
 ## [0.5.0] - 2020-04-16
 ### Changed
 - [#7](https://github.com/walkersumida/senro/pull/7) Change return values from string to hash

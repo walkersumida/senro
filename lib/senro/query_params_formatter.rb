@@ -33,7 +33,7 @@ module Senro
       elements = param.split(' ')
       elements.each_with_object(data) do |ele, h|
         if ele.include? ':'
-          ary = ele.split(':')
+          ary = ele.split(':', 2)
           h[:status][ary[0].underscore.to_sym] =
             Array(h[:status][ary[0].underscore.to_sym]) << ary[1]
         else

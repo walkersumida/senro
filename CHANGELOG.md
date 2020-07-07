@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+- [#9](https://github.com/walkersumida/senro/pull/9) Update rake gem
+
 ---
 
 ## [0.5.1] - 2020-04-16

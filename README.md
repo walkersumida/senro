@@ -52,12 +52,14 @@ end
 
 
 pp params['q']
-# => { 'query' => 'senro gem', 'status' => { 'is' => ['open', 'close'] } }
+# => { 'query' => 'senro gem', 'status' => { 'type' => ['pr'], 'is' => ['open'], 'label' => ['bug', 'ready'] } }
 pp params['original_q']
-# => 'is:open is:close senro gem'
+# => 'type:pr is:open label:bug label:ready senro gem'
 
 # e.g.
-@items = Item.where(title: params['q']['query'], status: params['q']['status']['is'])
+@items = Item.where(title: params['q']['query'],
+                    type: params['q']['status']['type'],
+                    status: params['q']['status']['is'])
 ```
 
 ## Development

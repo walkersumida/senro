@@ -1,6 +1,6 @@
 # Senro
 
-[![Build Status](https://travis-ci.org/walkersumida/senro.svg?branch=master)](https://travis-ci.org/walkersumida/senro)
+![Build Status](https://github.com/walkersumida/senro/workflows/build/badge.svg?branch=master)
 [![Gem Version](https://badge.fury.io/rb/senro.svg)](https://badge.fury.io/rb/senro)
 
 ## Installation

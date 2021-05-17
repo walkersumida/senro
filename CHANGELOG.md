@@ -6,10 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [0.6.0] - 2021-05-17
+### Fixed
+- [#12](https://github.com/walkersumida/senro/pull/12) Change response values when params are empty
+
 ### Security
 - [#9](https://github.com/walkersumida/senro/pull/9) Update rake gem
-
----
 
 ## [0.5.1] - 2020-04-16
 ### Fixed

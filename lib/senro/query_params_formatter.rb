@@ -12,6 +12,8 @@ module Senro
     # @param param [String] format string. e.g. `+id,-name`
     # @return [String] formated stirng
     def self.sort(param)
+      return {} if param.blank?
+
       attributes = param.split(',')
       attributes.each_with_object({}) do |attr, hash|
         if /^\-/.match(attr).nil?
@@ -30,6 +32,9 @@ module Senro
     # @return [String] formated stirng
     def self.query(param)
       data = { query: ''.dup, status: {} }
+
+      return data if param.blank?
+
       elements = param.split(' ')
       elements.each_with_object(data) do |ele, h|
         if ele.include? ':'

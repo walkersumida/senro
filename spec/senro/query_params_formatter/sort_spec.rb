@@ -8,6 +8,12 @@ RSpec.describe Senro::QueryParamsFormatter do
       end
     end
 
+    context 'without a sort key' do
+      it 'returns a empty hash' do
+        expect(Senro::QueryParamsFormatter.sort(nil)).to eq({})
+      end
+    end
+
     context 'with -' do
       it 'returns order clause containing DESC' do
         expect(Senro::QueryParamsFormatter.sort('-id')).to eq({ id: 'desc' })

@@ -11,6 +11,15 @@ RSpec.describe Senro::QueryParamsFormatter do
       end
     end
 
+    context 'without query' do
+      it 'returns a empty hash' do
+        expect(Senro::QueryParamsFormatter.query(nil)).to eq({
+          query: '',
+          status: {}
+        })
+      end
+    end
+
     context 'with status' do
       context 'with single status' do
         it 'returns a status' do
